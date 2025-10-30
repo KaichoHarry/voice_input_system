@@ -1,3 +1,5 @@
 [2025-10-30 18:19:07,743] [INFO] [test_logger] 情報レベルのログです。
 [2025-10-30 18:19:07,743] [WARNING] [test_logger] 警告レベルのログです。
 [2025-10-30 18:19:07,743] [ERROR] [test_logger] エラーレベルのログです。
+[2025-10-30 18:52:57,475] [INFO] [MicrophoneController] 5秒間録音を開始します...
+[2025-10-30 18:53:04,950] [INFO] [MicrophoneController] 録音を終了しました。ファイル保存: tests/ai_irasyaimase.wav
