@@ -1,0 +1,39 @@
+[2025-11-06 16:49:32,245] [INFO] [KeyboardListener] ⌨️ キーボード入力の監視を開始します（ESCで終了）
+[2025-11-06 16:49:57,068] [WARNING] [KeyboardListener] ウィンドウ情報の取得に失敗: module 'pyautogui' has no attribute 'getActiveWindow'
+[2025-11-06 16:49:57,071] [INFO] [KeyboardListener] 🎹 ホットキー検出: マイク起動要求
+[2025-11-06 16:49:57,684] [INFO] [KeyboardListener] 🛑 ホットキー解除: マイク停止要求
+[2025-11-06 16:50:02,973] [WARNING] [KeyboardListener] ウィンドウ情報の取得に失敗: module 'pyautogui' has no attribute 'getActiveWindow'
+[2025-11-06 16:50:02,974] [INFO] [KeyboardListener] 🎹 ホットキー検出: マイク起動要求
+[2025-11-06 16:50:06,212] [INFO] [KeyboardListener] 🛑 ホットキー解除: マイク停止要求
+[2025-11-06 16:50:08,999] [INFO] [KeyboardListener] ESCキーが押されました。リスナーを終了します。
+[2025-11-06 16:53:40,983] [INFO] [KeyboardEmitter] 🧠 テキスト入力を開始: こんにちは、テスト入力です！
+[2025-11-06 16:53:42,809] [INFO] [KeyboardEmitter] ✅ テキスト入力完了。
+[2025-11-06 16:53:42,993] [INFO] [KeyboardEmitter] ↩️ Enterキーを送信しました。
+[2025-11-06 16:59:37,742] [INFO] [SpeechProcessor] Whisperモデルをロード中: base
+[2025-11-06 17:00:43,186] [INFO] [SpeechProcessor] モデルロード完了（65.44秒）
+[2025-11-06 17:00:43,186] [INFO] [SpeechProcessor] 🎧 音声認識を開始: tests/ai_irasyaimase.wav
+[2025-11-06 17:06:32,439] [INFO] [MicrophoneController] 5秒間録音を開始します...
+[2025-11-06 17:06:37,701] [INFO] [MicrophoneController] 録音を終了しました。ファイル保存: tests/test_voice.wav
+[2025-11-06 17:08:40,141] [INFO] [SpeechProcessor] Whisperモデルをロード中: base
+[2025-11-06 17:08:40,778] [INFO] [SpeechProcessor] モデルロード完了（0.64秒）
+[2025-11-06 17:08:40,778] [INFO] [SpeechProcessor] 🎧 音声認識を開始: tests/ai_irasyaimase.wav
+[2025-11-06 17:08:56,830] [INFO] [SpeechProcessor] Whisperモデルをロード中: base
+[2025-11-06 17:08:57,477] [INFO] [SpeechProcessor] モデルロード完了（0.65秒）
+[2025-11-06 17:08:57,477] [INFO] [SpeechProcessor] 🎧 音声認識を開始: tests/test_voice.wav
+[2025-11-06 17:08:58,130] [INFO] [SpeechProcessor] ✅ 音声認識結果: 今日だけ全部忘れてくもより
+[2025-11-06 17:08:58,130] [INFO] [SpeechProcessor] 処理時間: 0.65秒
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] 🧠 NLP整形開始: 今日はいい天気ですね
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] ✅ NLP整形完了: 今日はいい天気ですね。
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] 🧠 NLP整形開始: Pythonの勉強をしています
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] ✅ NLP整形完了: Pythonの勉強をしています。
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] 🧠 NLP整形開始: これでどうかな？
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] ✅ NLP整形完了: これでどうかな？
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] 🧠 NLP整形開始: 明日は休みだね。
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] ✅ NLP整形完了: 明日は休みだね。
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] 🧠 NLP整形開始: えっ！そうなの
+[2025-11-06 17:15:23,011] [INFO] [NLPProcessor] ✅ NLP整形完了: えっ！そうなの。
+[2025-11-06 17:23:05,800] [INFO] [SpeechProcessor] Whisperモデルをロード中: base
+[2025-11-06 17:23:06,426] [INFO] [SpeechProcessor] モデルロード完了（0.63秒）
+[2025-11-06 17:28:55,177] [INFO] [SpeechProcessor] Whisperモデルをロード中: base
+[2025-11-06 17:28:55,823] [INFO] [SpeechProcessor] モデルロード完了（0.65秒）
+[2025-11-06 17:28:55,824] [INFO] [Main] 🎯 音声入力システムを起動しました。
