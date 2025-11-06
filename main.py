@@ -1,43 +1,57 @@
 # main.py
 import time
+import os
+from utils.config import Config
+from utils.logger import get_logger
 from core.keyboard_listener import KeyboardListener
 from core.microphone_controller import MicrophoneController
 from core.speech_processor import SpeechProcessor
 from core.nlp_processor import NLPProcessor
-from utils.config import Config
-from utils.logger import get_logger
+from core.keyboard_emitter import KeyboardEmitter
 
 def main():
-    logger = get_logger("Main")
+    # 設定とログ
     config = Config()
-
-    keyboard = KeyboardListener(config)
-    mic = MicrophoneController(config)
-    stt = SpeechProcessor(config)
-    nlp = NLPProcessor(config)
+    logger = get_logger("Main")
+    
+    # モジュール初期化
+    keyboard_listener = KeyboardListener(config)
+    mic_controller = MicrophoneController(config)
+    speech_processor = SpeechProcessor(config)
+    nlp_processor = NLPProcessor()
+    keyboard_emitter = KeyboardEmitter()
 
     logger.info("🎯 音声入力システムを起動しました。")
     print("⌨️ スペースキー長押しで録音、ESCで終了します。\n")
 
-    while True:
-        # ステータス確認ループ
-        if keyboard.status == "microphone_on":
-            logger.info("🎙️ 録音開始")
-            wav_path = mic.record(duration=config.RECORD_DURATION)
+    try:
+        # キー入力監視ループ
+        while True:
+            status = keyboard_listener.status
 
-            if wav_path:
-                text = stt.transcribe(wav_path)
-                processed = nlp.process_text(text)
-                print(f"🧠 出力: {processed}")
+            if status == "microphone_on" and mic_controller.stream is None:
+                # 録音開始
+                output_file = "temp_voice.wav"
+                mic_controller.record_to_file(output_file)
 
-            keyboard.status = "microphone_off"
-            logger.info("🛑 録音完了・待機状態へ")
+                # 音声→テキスト
+                text = speech_processor.speech_to_text(output_file)
 
-        elif keyboard.status == "exit":
-            logger.info("👋 終了処理を実行します。")
-            break
+                # NLP処理
+                corrected_text = nlp_processor.nlp_process(text)
 
-        time.sleep(0.3)
+                # キーボード入力
+                keyboard_emitter.keyboard_input(corrected_text)
+
+                # ステータスをリセット
+                keyboard_listener.status = "microphone_off"
+
+            time.sleep(0.1)
+
+    except KeyboardInterrupt:
+        logger.info("ユーザーによる終了（Ctrl+C）")
+    except Exception as e:
+        logger.error(f"エラー発生: {e}")
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,4 @@
+# core/microphone_controller.py
 import pyaudio
 import wave
 from utils.logger import get_logger
